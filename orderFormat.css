@@ -1,0 +1,14 @@
+.table {
+  display: table;
+  border: 1px solid #000;
+  margin: auto;
+}
+.tablerow {
+  display: table-row;
+  border: 1px solid #000;
+}
+.tablecell {
+  display: table-cell;
+  border: 1px solid #000;
+  padding: 8px;
+}

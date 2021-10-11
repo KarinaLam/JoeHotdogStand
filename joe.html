@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Joe's Hot Dogs</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="orderFormat.css" />
+  </head>
+  <style>
+    body {
+      background-image: url("hotdogbackground.jpg");
+    }
+    h1 {
+      color: rgb(243, 79, 79);
+      font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+        "Lucida Sans", Arial, sans-serif;
+      text-align: center;
+      background-color: white;
+      margin: 25px;
+      padding: 25px;
+    }
+    div {
+      color: #000000;
+      font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+        "Lucida Sans", Arial, sans-serif;
+    }
+    .table {
+      display: table;
+      border-collapse: collapse;
+      background-color: white;
+    }
+    .tablerow {
+      display: table-row;
+      border: 1px solid #000;
+    }
+    .tablecell {
+      display: table-cell;
+    }
+  </style>
+  <body>
+    <h1>Joe's Hotdog Stand</h1>
+    <script>
+      let discountedSubtotal = 0;
+      let total = 0;
+      let hotdogs = prompt("How many hotdogs would you like?", 0);
+      let hPrice = 3.75 * hotdogs;
+      let fries = prompt("How many orders of fries would you like?", 0);
+      let fPrice = 2 * fries;
+
+      let drinks = prompt("How many drinks would you like?", 0);
+      let dPrice = 1.5 * drinks;
+
+      let subtotal = hPrice + fPrice + dPrice;
+      if (subtotal >= 20) {
+        discountedSubtotal = Math.round(90 * subtotal) / 100;
+      } else {
+        discountedSubtotal = subtotal;
+      }
+      total = Math.round(106.25 * discountedSubtotal) / 100;
+    </script>
+    <div class="table">
+      <div class="tablerow">
+        <div class="tablecell">Item</div>
+        <div class="tablecell">Quantity</div>
+        <div class="tablecell">Price</div>
+      </div>
+      <div class="tablerow">
+        <div class="tablecell">Hotdogs</div>
+        <div class="tablecell">
+          <script>
+            document.write(hotdogs);
+          </script>
+        </div>
+        <div class="tablecell">
+          <script>
+            document.write("$" + hPrice);
+          </script>
+        </div>
+      </div>
+      <div class="tablerow">
+        <div class="tablecell">Fries</div>
+        <div class="tablecell">
+          <script>
+            document.write(fries);
+          </script>
+        </div>
+        <div class="tablecell">
+          <script>
+            document.write("$" + fPrice);
+          </script>
+        </div>
+      </div>
+      <div class="tablerow">
+        <div class="tablecell">Drinks</div>
+        <div class="tablecell">
+          <script>
+            document.write(drinks);
+          </script>
+        </div>
+        <div class="tablecell">
+          <script>
+            document.write("$" + dPrice);
+          </script>
+        </div>
+      </div>
+      <div class="tablerow">
+        <div style="border: none" class="tablecell">&nbsp;</div>
+        <div style="border: none" class="tablecell">&nbsp;</div>
+        <div style="border: none" class="tablecell">&nbsp;</div>
+      </div>
+      <div class="tablerow">
+        <div class="tablecell">Subtotal</div>
+        <div style="border: none" class="tablecell"></div>
+        <div style="border: none" class="tablecell">
+          <script>
+            document.write("$" + subtotal);
+          </script>
+        </div>
+      </div>
+      <div class="tablerow">
+        <div class="tablecell">
+          Discounted Subtotal (10% off for orders over $20)
+        </div>
+        <div style="border: none" class="tablecell"></div>
+        <div style="border: none" class="tablecell">
+          <script>
+            document.write("$" + discountedSubtotal);
+          </script>
+        </div>
+      </div>
+      <div class="tablerow">
+        <div class="tablecell"><b>Total (after tax)</b></div>
+        <div style="border: none" class="tablecell"></div>
+        <div style="border: none" class="tablecell">
+          <script>
+            document.write("$" + total);
+          </script>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
